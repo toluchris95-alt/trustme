@@ -286,43 +286,6 @@
         .verification-badge.verified .icon { display: inline-block; }
         .verification-badge.verified .text { display: inline; }
 
-        /* Add this to your main CSS file
-  to style the new images in your legacy cards 
-*/
-
-.legacy-card {
-  /* This makes the image and text stack nicely */
-  display: flex;
-  flex-direction: column;
-  /* This ensures the image corners (if rounded) are hidden */
-  overflow: hidden; 
-}
-
-.legacy-card-image {
-  width: 100%; /* Make the image fill the card's width */
-  height: 200px; /* Give all images a consistent height */
-  object-fit: cover; /* This scales and crops the image to fit perfectly */
-  margin-bottom: 1rem; /* Add space between the image and the text */
-  border-radius: 4px; /* Optional: give the image slightly rounded corners */
-}
-
-/* This targets the <h3> inside the card to align text */
-.legacy-card h3 {
-  /* This removes any old icon spacing */
-  padding-left: 0; 
-  display: block;
-  text-align: left;
-}
-
-/* This targets the <p> inside the card */
-.legacy-card p {
-  text-align: left;
-  flex-grow: 1; /* This makes the text fill the space, pushing buttons to the bottom */
-  margin-bottom: 1rem; /* Space before the admin buttons */
-}
-
-
-
         /* --- Whispers (Testimonials with Pics) --- */
         .reviews-grid {
             display: grid;
@@ -617,15 +580,15 @@
         };
 
         let ventures = store.get('ventures', [
-            { id: 1, name: "Angel Investments", desc: "Seeding the next generation of genius in FinTech and Green Energy.", icon: "image/ang1.jpeg" },
-            { id: 2, name: "Global Real Estate", desc: "A curated portfolio of properties in Miami, London, and Tokyo.", icon: "image/ang2.jpeg" },
-            { id: 3, name: "Private Aviation Fund", desc: "Access and equity in a fleet of next-generation private jets.", icon: "image/ang3.jpeg" }
+            { id: 1, name: "Angel Investments", desc: "Seeding the next generation of genius in FinTech and Green Energy.", icon: "chart" },
+            { id: 2, name: "Global Real Estate", desc: "A curated portfolio of properties in Miami, London, and Tokyo.", icon: "building" },
+            { id: 3, name: "Private Aviation Fund", desc: "Access and equity in a fleet of next-generation private jets.", icon: "plane" }
         ]);
         
         let patronage = store.get('patronage', [
-            { id: 1, name: "The Innovator's Fund", desc: "Seed capital and mentorship for young, ambitious entrepreneurs.", icon: "image/ang4.jpeg" },
-            { id: 2, name: "The Artist's Scholarship", desc: "Funding tuition and materials for two exceptional art students annually.", icon: "image/ang5.jpeg" },
-            { id: 3, name: "Doctors Without Borders", desc: "A public commitment to their critical, life-saving mission.", icon: "image/ang6.jpeg" }
+            { id: 1, name: "The Innovator's Fund", desc: "Seed capital and mentorship for young, ambitious entrepreneurs.", icon: "globe" },
+            { id: 2, name: "The Artist's Scholarship", desc: "Funding tuition and materials for two exceptional art students annually.", icon: "book" },
+            { id: 3, name: "Doctors Without Borders", desc: "A public commitment to their critical, life-saving mission.", icon: "heart" }
         ]);
 
         let reviews = store.get('reviews', [
@@ -634,75 +597,53 @@
             { id: 3, type: "trustpilot", text: "His mentorship completely changed the trajectory of my startup. He saw the potential in me when no one else would.", author: "Jessica Ramirez", avatar: "image/avatar2.jpeg" }
         ]);
 
-// --- Render Functions (Corrected) ---
+        // --- Render Functions ---
+        function renderVentures() {
+            const list = document.getElementById('ventures-list');
+            list.innerHTML = '';
+            ventures.forEach(item => {
+                list.innerHTML += `
+                    <div class="legacy-card">
+                        <span class="verification-badge">
+                            <div class="spinner"></div>
+                            <span class="icon">&#10003;</span>
+                            <span class="text">Verifying...</span>
+                        </span>
+                        <h3>${icons[item.icon] || ''} ${item.name}</h3>
+                        <p>${item.desc}</p>
+                        <div class="admin-buttons">
+                            <button onclick="editItem('ventures', ${item.id})">Edit</button>
+                            <button onclick="deleteItem('ventures', ${item.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+            // Trigger verification animation
+            setTimeout(triggerVerification, 100);
+        }
 
-function renderVentures() {
-    const list = document.getElementById('ventures-list');
-    list.innerHTML = '';
-    if (!list) return; // Safety check
-
-    ventures.forEach(item => {
-        list.innerHTML += `
-            <div class="legacy-card">
-                <span class="verification-badge">
-                    <div class="spinner"></div>
-                    <span class="icon">&#10003;</span>
-                    <span class="text">Verifying...</span>
-                </span>
-                
-                <!-- THIS IS THE FIX: We added an <img> tag -->
-                <img src="${item.icon}" alt="${item.name}" class="legacy-card-image">
-                
-                <!-- We removed the old ${icons[...]} logic from the h3 -->
-                <h3>${item.name}</h3>
-                <p>${item.desc}</p>
-                
-                <div class="admin-buttons">
-                    <button onclick="editItem('ventures', ${item.id})">Edit</button>
-                    <button onclick="deleteItem('ventures', ${item.id})">Delete</button>
-                </div>
-            </div>
-        `;
-    });
-    // Trigger verification animation
-    setTimeout(triggerVerification, 100);
-}
-
-// You will also need this function for your "My Patronage" section
-// It uses the exact same fix.
-function renderPatronage() {
-    const list = document.getElementById('patronage-list');
-    list.innerHTML = '';
-    if (!list) return; // Safety check
-
-    patronage.forEach(item => {
-        list.innerHTML += `
-            <div class="legacy-card">
-                <span class="verification-badge">
-                    <div class="spinner"></div>
-                    <span class="icon">&#10003;</span>
-                    <span class="text">Verifying...</span>
-                </span>
-                
-                <!-- THIS IS THE FIX: We added an <img> tag -->
-                <img src="${item.icon}" alt="${item.name}" class="legacy-card-image">
-                
-                <!-- We removed the old ${icons[...]} logic from the h3 -->
-                <h3>${item.name}</h3>
-                <p>${item.desc}</p>
-                
-                <div class="admin-buttons">
-                    <button onclick="editItem('patronage', ${item.id})">Edit</button>
-                    <button onclick="deleteItem('patronage', ${item.id})">Delete</button>
-                </div>
-            </div>
-        `;
-    });
-    // Trigger verification animation
-    setTimeout(triggerVerification, 100);
-}
-
-
+        function renderPatronage() {
+            const list = document.getElementById('patronage-list');
+            list.innerHTML = '';
+            patronage.forEach(item => {
+                list.innerHTML += `
+                    <div class="legacy-card">
+                        <span class="verification-badge">
+                            <div class="spinner"></div>
+                            <span class="icon">&#10003;</span>
+                            <span class="text">Verifying...</span>
+                        </span>
+                        <h3>${icons[item.icon] || ''} ${item.name}</h3>
+                        <p>${item.desc}</p>
+                        <div class="admin-buttons">
+                            <button onclick="editItem('patronage', ${item.id})">Edit</button>
+                            <button onclick="deleteItem('patronage', ${item.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+            setTimeout(triggerVerification, 100);
+        }
 
         function renderReviews() {
             const list = document.getElementById('reviews-list');
@@ -855,4 +796,3 @@ function renderPatronage() {
     </script>
 </body>
 </html>
-
