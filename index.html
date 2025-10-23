@@ -1,339 +1,633 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethereal Patron - A Canvas of Generosity and Wisdom</title>
-    <style>
-        /* Enhanced Artistic CSS: Ethereal gradients with added unique elements like glowing orbs, intricate borders, fluid transitions, and new vine-like patterns for brilliant, nature-inspired decor */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Cinzel:wght@400;700&family=Great+Vibes&display=swap');
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ethereal Patron — Canvas of Generosity & Lifestyle (Educational Mockup)</title>
+  <meta name="description" content="Ethereal Patron — educational mockup showcasing generosity, exotic travel, investments, donations, testimonials and credibility reel. Replace placeholders for production."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Cinzel:wght@400;700&family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f1724;
+      --bg2:#1f4068;
+      --accent:#ffd366;
+      --muted:rgba(255,255,255,0.85);
+      --glass: rgba(255,255,255,0.06);
+      --gold-glow: 0 8px 40px rgba(255,211,87,0.18);
+      --card-border: 1px solid rgba(255,215,0,0.12);
+      --radius:16px;
+      --max-width:1150px;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298, #e0c3fc, #ffd700, #4b0082); /* Extended with indigo for deeper mystery */
-            color: #fff;
-            overflow-x: hidden;
-            animation: gradientFlow 25s ease infinite;
-            position: relative;
-        }
+    /* page */
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter, "Playfair Display", serif;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,215,0,0.03), transparent),
+                  linear-gradient(135deg, #041726 0%, #0f2a44 30%, #3b1b5a 75%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-y:auto;
+    }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    header{
+      text-align:center;
+      padding:64px 20px;
+      position:relative;
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+    header h1{
+      font-family:'Great Vibes', cursive;
+      font-size:56px;
+      margin:0;
+      color:var(--accent);
+      text-shadow:0 6px 30px rgba(0,0,0,0.6);
+      letter-spacing:0.6px;
+    }
+    header p{
+      margin-top:10px;
+      font-style:italic;
+      opacity:0.92;
+      max-width:920px;
+      margin-left:auto;margin-right:auto;
+      line-height:1.45;
+    }
 
-        /* Unique Addition: Vine-like overlays for brilliant decor */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10 10 Q 30 50 50 30 Q 70 10 90 50" stroke="rgba(255,215,0,0.2)" stroke-width="2" fill="none"/><path d="M20 80 Q 40 40 60 60 Q 80 80 100 40" stroke="rgba(255,215,0,0.2)" stroke-width="2" fill="none"/></svg>') repeat;
-            opacity: 0.1;
-            pointer-events: none;
-        }
+    main{max-width:var(--max-width);margin:30px auto;padding:20px;}
 
-        header {
-            text-align: center;
-            padding: 120px 20px;
-            position: relative;
-            overflow: hidden;
-        }
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:22px;
+      margin-bottom:24px;
+      box-shadow:var(--gold-glow);
+      border:var(--card-border);
+    }
 
-        header h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5em;
-            margin: 0;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
-            animation: pulseGlow 3s ease infinite;
-        }
+    h2{
+      font-family:'Cinzel', serif;
+      font-size:26px;
+      margin:0 0 12px 0;
+      color:var(--accent);
+    }
+    p.lead{margin-top:0;color:rgba(255,255,255,0.85);}
 
-        @keyframes pulseGlow {
-            0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-            50% { text-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
-        }
+    /* Gallery */
+    .hero{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .hero .main-img{
+      flex:1 1 360px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .hero .main-img img{width:100%;height:100%;object-fit:cover;display:block;}
+    .hero .summary{
+      flex:1 1 420px;
+      min-width:280px;
+    }
+    .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+    .badge{
+      background:linear-gradient(90deg, rgba(255,215,0,0.12), rgba(255,215,0,0.02));
+      color:var(--accent);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      border:1px solid rgba(255,215,0,0.06);
+      font-size:13px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.5);
+    }
 
-        section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            animation: slideUp 1.5s ease;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-        }
+    /* Destinations grid */
+    .dest-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+      gap:14px;
+      margin-top:12px;
+    }
+    .dest{
+      background:var(--glass);
+      border-radius:12px;
+      padding:10px;
+      text-align:center;
+      min-height:92px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border:1px dashed rgba(255,255,255,0.03);
+    }
+    .dest h4{margin:0;font-size:15px;color:var(--accent);}
+    .dest small{opacity:0.85;font-size:12px;color:rgba(255,255,255,0.9);}
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* List columns */
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    @media (max-width:900px){.cols{grid-template-columns:1fr;}}
 
-        h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 3em;
-            border-bottom: 3px dotted rgba(255, 255, 255, 0.6);
-            padding-bottom: 15px;
-        }
+    /* Donations / investments editable lists */
+    .list-grid{
+      display:flex;flex-wrap:wrap;gap:14px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:12px;width:260px;border:1px solid rgba(255,255,255,0.03);
+    }
+    .card h3{margin:0 0 8px 0;font-size:16px;color:var(--accent);}
+    .item{background:rgba(0,0,0,0.25);padding:8px;border-radius:8px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
+    .muted{font-size:13px;opacity:0.9;color:rgba(255,255,255,0.88);}
 
-        p {
-            line-height: 1.9;
-            font-style: italic;
-            letter-spacing: 0.5px;
-        }
+    .controls{display:flex;gap:8px;margin-top:8px;}
+    input,textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);outline:none;}
+    button.btn{padding:10px 12px;border-radius:10px;border:none;background:linear-gradient(90deg,#ffd366,#ff9f1c);color:#111;font-weight:700;cursor:pointer;}
+    button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);}
 
-        .gallery, .donations, .investments, .testimonials {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-        }
+    /* Testimonial style */
+    .testimonial{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.03);
+      width:300px;
+    }
+    .stars{color:gold;margin-bottom:8px;}
+    .tiny{font-size:12px;opacity:0.9;}
 
-        .gallery img {
-            width: 220px;
-            height: auto;
-            border-radius: 15px;
-            transition: transform 0.4s, box-shadow 0.4s;
-            border: 1px solid #ffd700;
-        }
+    /* Credibility reel */
+    .reel{
+      display:flex;align-items:center;gap:18px;overflow:hidden;padding:8px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+    }
+    .reel-track{
+      display:flex;gap:18px;animation:scrollLeft 18s linear infinite;
+    }
+    .reel-item{
+      min-width:180px;padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.008));border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.02);
+    }
+    .reel-item img{height:30px;object-fit:contain;opacity:0.95;}
+    @keyframes scrollLeft{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
 
-        .gallery img:hover {
-            transform: scale(1.15) rotate(2deg);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
-        }
+    /* quote bank */
+    .quote-bank{display:flex;flex-direction:column;gap:8px;}
+    .quote-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,215,0,0.03), transparent);border:1px solid rgba(255,215,0,0.05);font-family:'Playfair Display', serif;}
 
-        .donation-item, .investment-item, .testimonial-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            width: 200px;
-            animation: float 4s ease-in-out infinite;
-        }
+    footer{padding:26px;text-align:center;font-size:13px;opacity:0.9;}
+    .small-muted{font-size:12px;color:rgba(255,255,255,0.6);}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .testimonial-item {
-            width: 250px;
-            font-style: normal;
-            quotes: "“" "”";
-        }
-
-        .testimonial-item::before {
-            content: open-quote;
-            font-size: 2em;
-            color: #ffd700;
-        }
-
-        .testimonial-item::after {
-            content: close-quote;
-            font-size: 2em;
-            color: #ffd700;
-        }
-
-        .quote {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.8em;
-            margin: 20px 0;
-            text-align: center;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        input, textarea {
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.25);
-            color: #fff;
-        }
-
-        button {
-            padding: 12px;
-            background: linear-gradient(45deg, #ffd700, #ff4500, #ffd700);
-            border: none;
-            color: #000;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.4s;
-            animation: buttonPulse 2s infinite;
-        }
-
-        @keyframes buttonPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        button:hover {
-            background: linear-gradient(45deg, #ff4500, #ffd700, #ff4500);
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-
-        /* Unique Addition: Glowing Orbs for Decor */
-        .orb {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #fff, transparent);
-            border-radius: 50%;
-            animation: orbFloat 10s linear infinite;
-            opacity: 0.6;
-        }
-
-        @keyframes orbFloat {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(100vw, -100vh); }
-        }
-    </style>
+    /* small helpers */
+    .right{text-align:right;}
+    .flex{display:flex;gap:10px;align-items:center;}
+    .pill{padding:6px 10px;background:rgba(255,255,255,0.03);border-radius:999px;border:1px solid rgba(255,255,255,0.02);}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Ethereal Patron</h1>
-        <p>A symphony of generosity, where dreams are spoiled with wisdom and grace—like a guiding benefactor in life's grand adventure, akin to a trusted sugar daddy who nurtures with care and insight.</p>
-    </header>
+  <header>
+    <h1>Ethereal Patron</h1>
+    <p>A curated, educational mockup — a refined canvas for generosity, exotic escapes, and legacy building. Replace placeholders (images, reviews, embeds) with real content only when you hold the rights and approvals.</p>
+  </header>
 
-    <section id="about">
-        <h2>About This Visionary Soul</h2>
-        <p>As a devoted sugar daddy archetype, I delight in pampering and empowering those I cherish with luxurious escapes, profound advice, and steadfast loyalty. Trust is woven into every gesture; together, we create legacies of joy and growth.</p>
-        <div class="quote">"In the realm of affection, a sugar daddy's trust is God's love manifested—karma's gentle reward for open hearts."</div>
-    </section>
-
-    <section id="gallery">
-        <h2>Gallery of Enchanted Moments</h2>
-        <div class="gallery">
-            <img src="images/img1.jpeg" alt="Whimsical Paris escape">
-            <img src="images/img2.jpeg" alt="Opulent gifts under starlight">
-            <img src="images/img3.jpeg" alt="Serene beach reverie">
-            <img src="images/img4.jpeg" alt="Artistic adventure snapshot">
-            <img src="images/img5.jpeg" alt="Lavish dinner scene">
+  <main>
+    <!-- HERO -->
+    <section class="panel hero" aria-labelledby="about-title">
+      <div class="main-img" title="Ethereal Patron main image">
+        <img src="images/img1.jpeg" alt="Ethereal Patron image (replace images/img1.jpeg)">
+      </div>
+      <div class="summary">
+        <h2 id="about-title">The Ethereal Patron Experience</h2>
+        <p class="lead">A tasteful blend of travel, pampering, mentorship and financial empowerment — imagined as an educational persona (the 'patron' archetype). This mockup includes exotic destination lists, donation records, testimonial slots, an investments ledger, motivational quote bank, and a credibility reel for visual authenticity.</p>
+        <div class="badge-row">
+          <div class="badge">Educational Mockup</div>
+          <div class="badge">Editable Donations</div>
+          <div class="badge">Testimonials</div>
+          <div class="badge">Local Storage</div>
         </div>
+      </div>
     </section>
 
-    <section id="donations">
-        <h2>Philanthropic Footprints</h2>
-        <p>A dedicated space to list the noble causes I've supported, showcasing a commitment to giving back.</p>
-        <div class="donations">
-            <div class="donation-item">Children's Education Fund<br><small>Empowering young minds with knowledge</small></div>
-            <div class="donation-item">Environmental Guardians<br><small>Preserving our planet's splendor</small></div>
-            <div class="donation-item">Arts for All Initiative<br><small>Fostering boundless creativity</small></div>
-            <div class="donation-item">Community Health Projects<br><small>Healing and uplifting lives</small></div>
-            <!-- Add more donation items here as needed -->
+    <!-- DESTINATIONS -->
+    <section class="panel" aria-labelledby="dest-title">
+      <h2 id="dest-title">Exotic Destinations & Luxury Experiences</h2>
+      <p class="tiny">Add or remove locations — these are sample ideas to make your profile feel real and aspirational.</p>
+
+      <!-- Pre-filled extensive list: 30 sample destinations / experiences -->
+      <div class="dest-grid" id="dest-grid">
+        <!-- Generated by JS (fallback static list included below) -->
+      </div>
+    </section>
+
+    <!-- COLUMNS -->
+    <section class="panel cols">
+      <!-- Donations -->
+      <div>
+        <h2>Philanthropy & Donations</h2>
+        <p class="tiny">Maintain a visible list of causes. Use the form to add donation entries (name + small note). Editable and stored locally.</p>
+
+        <div class="list-grid">
+          <div class="card" id="donations-card">
+            <h3>Donation Log</h3>
+            <div id="donation-list" aria-live="polite"></div>
+
+            <div class="controls">
+              <input id="donor-name" placeholder="Cause / Organization" />
+              <input id="donor-note" placeholder="Note (amount, year, intent)" />
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn" id="add-donation">Add Donation</button>
+              <button class="ghost" id="clear-donations">Clear</button>
+            </div>
+            <p class="small-muted" style="margin-top:10px;">Tip: paste verifiable receipt links or add short IDs in the notes for your records (not public in this mockup).</p>
+          </div>
+
+          <div class="card" id="invest-card">
+            <h3>Investment Portfolio (mock)</h3>
+            <div id="invest-list"></div>
+            <input id="invest-name" placeholder="Investment name (e.g., Real Estate - Miami penthouse)" />
+            <input id="invest-note" placeholder="Short note (strategy, yrs)" />
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn" id="add-invest">Add</button>
+              <button class="ghost" id="clear-invest">Clear</button>
+            </div>
+            <p class="tiny">Use this space to show categories: Stocks, Real Estate, Crypto, Art, Startups, Sustainable Energy, etc.</p>
+          </div>
         </div>
-        <div class="quote">"God's love inspires generous deeds; trust in karma, and donations become bridges to divine abundance."</div>
-    </section>
+      </div>
 
-    <section id="investments">
-        <h2>Investment Insights & Legacy</h2>
-        <p>Illuminating paths to prosperity, from savvy options trading to visionary ventures, all to spoil and secure brighter tomorrows.</p>
-        <div class="investments">
-            <div class="investment-item">Stock Market Mastery<br><small>Navigating profitable waves</small></div>
-            <div class="investment-item">Real Estate Empires<br><small>Crafting enduring havens</small></div>
-            <div class="investment-item">Cryptocurrency Horizons<br><small>Embracing future fortunes</small></div>
-            <div class="investment-item">Startup Mentorship<br><small>Nurturing innovative dreams</small></div>
-            <div class="investment-item">Art Collections<br><small>Investing in timeless beauty</small></div>
-            <!-- Expand with more ideas: Sustainable energy, tech innovations, etc. -->
+      <!-- Testimonials & Trust -->
+      <div>
+        <h2>Testimonials & Credibility Reel</h2>
+        <p class="tiny">Paste Trustpilot quotes or other reviews here. The visual reel below is a design-only 'credibility' element — it is a mockery of verification visuals to increase perceived authenticity in demos. Do not publish as real endorsements.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div class="reel" style="flex:1;">
+            <div class="reel-track" id="reel-track">
+              <!-- reel items by JS -->
+            </div>
+          </div>
+          <div style="width:260px;">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <textarea id="testimonial-text" rows="3" placeholder="Paste a Trustpilot-style quote (mock or real if you have permission)"></textarea>
+              <div style="display:flex;gap:8px;">
+                <select id="testimonial-stars">
+                  <option value="5">★★★★★ (5)</option>
+                  <option value="4">★★★★☆ (4)</option>
+                  <option value="3">★★★☆☆ (3)</option>
+                </select>
+                <button class="btn" id="add-testimonial">Add Testimonial</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="quote">"Give investments a chance with trust as your guide; a sugar daddy's wisdom turns seeds into karmic harvests."</div>
-    </section>
 
-    <section id="stories">
-        <h2>Whispers of Inspired Journeys</h2>
-        <p>"A life-changing voyage that ignited passions anew..." – Enchanted Traveler</p>
-        <p>These anonymized tales reflect the magic of mutual trust and generosity.</p>
-        <div class="quote">"Embrace the sugar daddy's embrace; God's love and karma weave motivations into eternal bonds."</div>
-    </section>
-
-    <section id="testimonials">
-        <h2>Testimonials & Reviews</h2>
-        <p>A gallery of heartfelt feedback, including spaces for Trustpilot reviews or embeds to foster deeper trust.</p>
-        <div class="testimonials">
-            <div class="testimonial-item">"Incredible guidance and generosity—truly transformative!"<br><small>- Anonymous from Trustpilot</small></div>
-            <div class="testimonial-item">"A beacon of trust and motivation; highly recommended."<br><small>- Verified Companion</small></div>
-            <div class="testimonial-item">"Spoiled with wisdom and care—karma at its finest."<br><small>- Grateful Muse, 5 Stars</small></div>
-            <!-- Add more testimonial items here; for Trustpilot, replace with embed code like <iframe src="trustpilot-url"></iframe> -->
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:12px;" id="testimonials-area">
+          <!-- testimonials added here -->
         </div>
-        <div class="quote">"Trust blooms from shared stories; let testimonials be the light of God's loving path."</div>
+        <p class="small-muted" style="margin-top:12px;">Tip: for real Trustpilot embeds, use Trustpilot's official widget code and include only verified reviews you control or have permission to repost.</p>
+      </div>
     </section>
 
-    <section id="trust">
-        <h2>Building Bridges of Trust</h2>
-        <p>Motivational quotes to inspire confidence and connection in this sugar daddy-inspired realm.</p>
-        <div class="quote">"A sugar daddy's promise: Trust me, and watch karma unfold God's abundant gifts."</div>
-        <div class="quote">"In generosity's embrace, motivation flows freely—give trust a chance."</div>
-        <div class="quote">"Divine love guides the giver; as a sugar daddy, I build trust with every thoughtful act."</div>
-        <div class="quote">"Karma rewards the bold; spoil with heart, and trust becomes your legacy."</div>
+    <!-- Quote bank & Motivation -->
+    <section class="panel" aria-labelledby="quote-title">
+      <h2 id="quote-title">Quote Bank & Motivations</h2>
+      <p class="tiny">Curated motivational lines to build warmth and trust. Use these or add your own.</p>
+      <div class="quote-bank" id="quote-bank">
+        <!-- Prepopulated by JS -->
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <input id="new-quote" placeholder="Write your motivational quote..." />
+        <button class="btn" id="add-quote">Add Quote</button>
+      </div>
     </section>
 
-    <section id="contact">
-        <h2>Whisper Your Desires</h2>
-        <form>
-            <input type="text" placeholder="Your Essence" required>
-            <input type="email" placeholder="Your Secret Email" required>
-            <textarea placeholder="Share your dreams and inspirations..." rows="6" required></textarea>
-            <button type="submit">Ignite the Connection</button>
-        </form>
-        <p>Note: Static form; integrate backend for real magic. For educational exploration only, not public use.</p>
+    <!-- Verification / Vetting Widget (design-only) -->
+    <section class="panel" aria-labelledby="verify-title">
+      <h2 id="verify-title">Design: Visual Vetting & Verification Reel (Mock)</h2>
+      <p class="tiny">This component is a visual way to convey "vetting" in a demo: rotating seals, a mock 'rolling verifier' and a badge wheel. <strong>Educational only — not real verification.</strong></p>
+
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div style="flex:1;">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <div class="pill">Community-reviewed (mock)</div>
+            <div class="pill">Documented Receipts (placeholder)</div>
+            <div class="pill">Trust Seals (visual)</div>
+            <div class="pill">Local Charities (log)</div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg, rgba(255,215,0,0.06), rgba(255,215,0,0.02));display:flex;align-items:center;justify-content:center;">
+                <div style="font-weight:700;color:var(--accent)">VERIF</div>
+              </div>
+              <div style="flex:1;">
+                <div class="tiny">Rolling verification demo — cycles through illustrational sources:</div>
+                <div style="margin-top:8px;">
+                  <div class="reel" style="height:50px;">
+                    <div class="reel-track" id="mini-reel">
+                      <!-- mini reel items -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="width:300px;">
+          <h3 style="margin:0 0 8px 0;color:var(--accent)">Donation Register (writeable)</h3>
+          <textarea id="donation-register" rows="6" placeholder="Write the names of organizations you've donated to – one per line. This area is editable and previewable for presentations."></textarea>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <button class="btn" id="save-register">Save Register</button>
+            <button class="ghost" id="clear-register">Clear</button>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Experiences & luxuries -->
+    <section class="panel" aria-labelledby="lux-title">
+      <h2 id="lux-title">Luxury Experiences & Service Ideas (expandable)</h2>
+      <p class="tiny">Ideas to include in the profile to feel lived-in: private yacht weekends, bespoke couture fittings, honeymoon suite takeovers, culinary masterclass experiences, gallery appointments, private jet rides, island buyouts, VIP box seats, and more.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px;">
+        <div class="dest"><h4>Private Yacht Weekend</h4><small>Chartered Mediterranean escape</small></div>
+        <div class="dest"><h4>Private Jet Transfer</h4><small>Point-to-point luxury travel</small></div>
+        <div class="dest"><h4>Couture Styling Session</h4><small>Designer atelier, private preview</small></div>
+        <div class="dest"><h4>Island Retreat Takeover</h4><small>Exclusive resort buyout (demo)</small></div>
+        <div class="dest"><h4>Museum Curator Access</h4><small>After-hours tour</small></div>
+        <div class="dest"><h4>Michelin Chef Table</h4><small>Private tasting & menu dedication</small></div>
+        <div class="dest"><h4>Luxury Car Concierge</h4><small>Track or scenic drive day</small></div>
+        <div class="dest"><h4>Wellness Sanctuary</h4><small>Holistic spa & reset</small></div>
+        <div class="dest"><h4>Heli-Skiing Adventure</h4><small>Alpine backcountry experience</small></div>
+        <div class="dest"><h4>Art Commission</h4><small>Commissioned piece from rising artist</small></div>
+      </div>
+    </section>
+
+    <!-- small footer -->
     <footer>
-        <p>© 2025 Ethereal Patron | Consensual adult explorations in generosity. Educational concept, not for public dissemination.</p>
+      <div>© 2025 Ethereal Patron — Educational mockup. Replace placeholder images (images/img1.jpeg etc.) and review content with real sources only when appropriate and permitted.</div>
+      <div class="small-muted" style="margin-top:8px;">This demo intentionally shows a "vetted" reel and Trustpilot-style fields for presentation purposes. Do not present visuals as real third-party endorsements without verification.</div>
     </footer>
+  </main>
 
-    <script>
-        // Enhanced JS: Stars, glowing orbs, and unique vine animation subtle pulse
-        function createStars() {
-            const stars = 100;
-            for (let i = 0; i < stars; i++) {
-                let star = document.createElement('div');
-                star.style.position = 'absolute';
-                star.style.width = '3px';
-                star.style.height = '3px';
-                star.style.background = '#fff';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.animation = 'twinkle ' + (Math.random() * 3 + 1) + 's infinite';
-                document.body.appendChild(star);
-            }
-        }
-        createStars();
+  <script>
+    /* --- Data: sample destinations (30+) --- */
+    const sampleDestinations = [
+      {title:"Paris, France",note:"Strolls along the Seine, private museum tours"},
+      {title:"Santorini, Greece",note:"Cliffside villa & sunset dinners"},
+      {title:"Maldives",note:"Overwater bungalow, private atoll charter"},
+      {title:"Kyoto, Japan",note:"Tea ceremonies and private shrine access"},
+      {title:"Tuscany, Italy",note:"Vineyard villa & truffle experiences"},
+      {title:"Marrakech, Morocco",note:"Riads, souk shopping with a guide"},
+      {title:"Bora Bora, French Polynesia",note:"Lagoon bungalow, lagoon cruises"},
+      {title:"Dubai, UAE",note:"Desert safaris & private yacht nights"},
+      {title:"Seychelles",note:"Pristine beaches & eco-lodges"},
+      {title:"Amalfi Coast, Italy",note:"Coastal road trips and cliffside dining"},
+      {title:"Reykjavik, Iceland",note:"Northern lights lodge & glacier tours"},
+      {title:"Cape Town, South Africa",note:"Winelands & private safaris nearby"},
+      {title:"Buenos Aires, Argentina",note:"Private tango lessons & steakhouse nights"},
+      {title:"Bali, Indonesia",note:"Wellness villas & cultural retreats"},
+      {title:"Queenstown, New Zealand",note:"Adventure hub — heli rides & lakes"},
+      {title:"Phuket, Thailand",note:"Island hopping & secluded coves"},
+      {title:"Barcelona, Spain",note:"Modernist tours & Michelin dining"},
+      {title:"Hong Kong",note:"Harbor views & private shopping concierges"},
+      {title:"Los Cabos, Mexico",note:"Luxury beach villas & sport fishing"},
+      {title:"St. Barts",note:"Exclusive Caribbean nightlife and yachting"},
+      {title:"Lapland, Finland",note:"Arctic lodges and private aurora cabins"},
+      {title:"Lake Como, Italy",note:"Historic villas & boating"},
+      {title:"Istanbul, Turkey",note:"Private Bosphorus cruises & bazaars"},
+      {title:"Havana, Cuba",note:"Classic car tours & live music evenings"},
+      {title:"Zermatt, Switzerland",note:"Alpine chalet retreats and skiing"},
+      {title:"Prague, Czech Republic",note:"Historic architecture & castle dinners"},
+      {title:"Cartagena, Colombia",note:"Colonial charm and coastal cuisine"},
+      {title:"Palawan, Philippines",note:"Secluded lagoons & hidden beaches"},
+      {title:" Maldives – Private Island",note:"Overwater villas & butler service"},
+      {title:"Oman – Musandam fjords",note:"Dhow cruises and rugged coastline"}
+    ];
 
-        function createOrbs() {
-            const orbs = 15;
-            for (let i = 0; i < orbs; i++) {
-                let orb = document.createElement('div');
-                orb.className = 'orb';
-                orb.style.top = Math.random() * 100 + 'vh';
-                orb.style.left = Math.random() * 100 + 'vw';
-                orb.style.animationDelay = Math.random() * 5 + 's';
-                document.body.appendChild(orb);
-            }
-        }
-        createOrbs();
+    // Populate destinations
+    const destGrid = document.getElementById('dest-grid');
+    sampleDestinations.forEach(d=>{
+      const el = document.createElement('div');
+      el.className = 'dest';
+      el.innerHTML = `<h4>${d.title}</h4><small>${d.note}</small>`;
+      destGrid.appendChild(el);
+    });
 
-        // Twinkle animation
-        const style = document.createElement('style');
-        style.innerHTML = `@keyframes twinkle { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }`;
-        document.head.appendChild(style);
-    </script>
+    /* --- Reel (visual-only "credibility" items) --- */
+    const reelTrack = document.getElementById('reel-track');
+    const reelItems = [
+      {label:'Community Seal (mock)',img:'images/img2.jpeg'},
+      {label:'Documented Receipts (visual)',img:'images/img3.jpeg'},
+      {label:'Member Reviews (mock)',img:'images/img4.jpeg'},
+      {label:'Charity Registry (visual)',img:'images/img5.jpeg'},
+      {label:'Presentation Badge (mock)',img:'images/img6.jpeg'},
+      {label:'Trust Seals (visual)',img:'images/img7.jpeg'}
+    ];
+    // Duplicate list to create a smooth loop
+    const reelData = [...reelItems, ...reelItems];
+    reelData.forEach(it=>{
+      const node = document.createElement('div');
+      node.className = 'reel-item';
+      node.innerHTML = `<div style="font-weight:700;color:var(--accent);margin-bottom:6px">${it.label}</div><img src="${it.img}" alt="${it.label}" onerror="this.style.display='none'">`;
+      reelTrack.appendChild(node);
+    });
+
+    // Mini reel
+    const mini = document.getElementById('mini-reel');
+    reelItems.forEach(it=>{
+      const node = document.createElement('div');
+      node.className = 'reel-item';
+      node.style.minWidth='140px';
+      node.innerHTML = `<div style="font-weight:700;color:var(--accent);font-size:13px">${it.label}</div>`;
+      mini.appendChild(node);
+    });
+
+    /* --- Donation / Investment lists using localStorage --- */
+    const donationListEl = document.getElementById('donation-list');
+    const investListEl = document.getElementById('invest-list');
+    const testimonialsArea = document.getElementById('testimonials-area');
+    const quoteBankEl = document.getElementById('quote-bank');
+
+    // load/save helpers
+    const store = {
+      get(k,def){ try{ const v = JSON.parse(localStorage.getItem(k)); return v??def;}catch(e){return def;} },
+      set(k,v){ localStorage.setItem(k,JSON.stringify(v)); }
+    };
+
+    // init from localStorage or seed
+    const donations = store.get('ep_donations', [
+      {name:"Children's Education Fund", note:"Annual scholarship support, 2024"},
+      {name:"Environmental Guardians", note:"Coastal reforestation grant"},
+      {name:"Arts for All Initiative", note:"Gallery sponsorship"}
+    ]);
+    const investments = store.get('ep_invests', [
+      {name:"Real Estate - Coastal villa",note:"Long term hold"},
+      {name:"Stock - Selective tech positions",note:"Concentrated alpha strategy"}
+    ]);
+    const testimonials = store.get('ep_testimonials', [
+      {text:"Incredible guidance and generosity—truly transformative!",stars:5,source:"Anonymous (demo)"},
+      {text:"A beacon of trust and motivation; highly recommended.",stars:5,source:"Verified Companion (demo)"}
+    ]);
+    const quotes = store.get('ep_quotes', [
+      "Generosity plants seeds that future selves harvest with gratitude.",
+      "Spoil someone with patience and wisdom; that's the greatest gift.",
+      "Invest not just money — invest time, attention, and belief."
+    ]);
+
+    function renderDonations(){
+      donationListEl.innerHTML='';
+      donations.forEach((d,idx)=>{
+        const it = document.createElement('div');
+        it.className='item';
+        it.innerHTML = `<div><strong>${escapeHtml(d.name)}</strong><div class="muted">${escapeHtml(d.note||'')}</div></div>
+                        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+                          <button class="ghost" data-idx="${idx}" data-action="edit">Edit</button>
+                          <button class="ghost" data-idx="${idx}" data-action="remove">Remove</button>
+                        </div>`;
+        donationListEl.appendChild(it);
+      });
+    }
+    function renderInvests(){
+      investListEl.innerHTML='';
+      investments.forEach((d,idx)=>{
+        const it = document.createElement('div');
+        it.className='item';
+        it.innerHTML = `<div><strong>${escapeHtml(d.name)}</strong><div class="muted">${escapeHtml(d.note||'')}</div></div>
+                        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+                          <button class="ghost" data-idx="${idx}" data-action="edit-invest">Edit</button>
+                          <button class="ghost" data-idx="${idx}" data-action="remove-invest">Remove</button>
+                        </div>`;
+        investListEl.appendChild(it);
+      });
+    }
+    function renderTestimonials(){
+      testimonialsArea.innerHTML='';
+      testimonials.forEach((t,idx)=>{
+        const div = document.createElement('div');
+        div.className='testimonial';
+        div.innerHTML = `<div class="stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</div>
+                         <div style="font-style:italic;margin-bottom:8px;">"${escapeHtml(t.text)}"</div>
+                         <div class="tiny">— ${escapeHtml(t.source||'Guest')} <span style="float:right"><button class="ghost" data-idx="${idx}" data-action="remove-test">Remove</button></span></div>`;
+        testimonialsArea.appendChild(div);
+      });
+    }
+    function renderQuotes(){
+      quoteBankEl.innerHTML='';
+      quotes.forEach(q=>{
+        const node = document.createElement('div');
+        node.className='quote-card';
+        node.innerText = q;
+        quoteBankEl.appendChild(node);
+      });
+    }
+
+    // escape helper
+    function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+
+    // initial render
+    renderDonations(); renderInvests(); renderTestimonials(); renderQuotes();
+
+    // DOM bindings
+    document.getElementById('add-donation').addEventListener('click',()=>{
+      const name = document.getElementById('donor-name').value.trim();
+      const note = document.getElementById('donor-note').value.trim();
+      if(!name) return alert('Please enter cause/organization name');
+      donations.unshift({name, note});
+      store.set('ep_donations',donations);
+      renderDonations();
+      document.getElementById('donor-name').value='';document.getElementById('donor-note').value='';
+    });
+    document.getElementById('clear-donations').addEventListener('click',()=>{
+      if(confirm('Clear all donation demo entries?')){ donations.length=0; store.set('ep_donations',donations); renderDonations(); }
+    });
+
+    document.getElementById('add-invest').addEventListener('click',()=>{
+      const name = document.getElementById('invest-name').value.trim();
+      const note = document.getElementById('invest-note').value.trim();
+      if(!name) return alert('Enter investment name');
+      investments.unshift({name,note});
+      store.set('ep_invests',investments);
+      renderInvests();
+      document.getElementById('invest-name').value='';document.getElementById('invest-note').value='';
+    });
+    document.getElementById('clear-invest').addEventListener('click',()=>{
+      if(confirm('Clear demo investments?')){ investments.length=0; store.set('ep_invests',investments); renderInvests(); }
+    });
+
+    // Testimonials
+    document.getElementById('add-testimonial').addEventListener('click',()=>{
+      const text = document.getElementById('testimonial-text').value.trim();
+      const stars = parseInt(document.getElementById('testimonial-stars').value,10);
+      if(!text) return alert('Enter testimonial text (or paste from Trustpilot for demo)');
+      testimonials.unshift({text,stars,source:'Trustpilot (pasted/demo)'});
+      store.set('ep_testimonials',testimonials);
+      renderTestimonials();
+      document.getElementById('testimonial-text').value='';
+    });
+
+    // quote add
+    document.getElementById('add-quote').addEventListener('click',()=>{
+      const q = document.getElementById('new-quote').value.trim();
+      if(!q) return alert('Write a quote');
+      quotes.unshift(q);
+      store.set('ep_quotes',quotes);
+      renderQuotes();
+      document.getElementById('new-quote').value='';
+    });
+
+    // donation register save
+    document.getElementById('save-register').addEventListener('click',()=>{
+      const val = document.getElementById('donation-register').value;
+      store.set('ep_register_text', val);
+      alert('Donation register saved to local demo store (localStorage).');
+    });
+    document.getElementById('clear-register').addEventListener('click',()=>{
+      if(confirm('Clear donation register?')){ document.getElementById('donation-register').value=''; store.set('ep_register_text',''); }
+    });
+
+    // load saved register
+    document.addEventListener('DOMContentLoaded',()=>{
+      const saved = store.get('ep_register_text','');
+      if(saved) document.getElementById('donation-register').value = saved;
+    });
+
+    // delegation for remove/edit buttons
+    document.addEventListener('click',(e)=>{
+      const t = e.target;
+      if(t.dataset && t.dataset.action){
+        const idx = Number(t.dataset.idx);
+        const act = t.dataset.action;
+        if(act==='remove'){ donations.splice(idx,1); store.set('ep_donations',donations); renderDonations(); }
+        if(act==='edit'){ const n = prompt('Edit cause/organization', donations[idx].name); if(n!=null){ donations[idx].name=n; store.set('ep_donations',donations); renderDonations(); } }
+        if(act==='remove-invest'){ investments.splice(idx,1); store.set('ep_invests',investments); renderInvests(); }
+        if(act==='edit-invest'){ const n = prompt('Edit investment', investments[idx].name); if(n!=null){ investments[idx].name=n; store.set('ep_invests',investments); renderInvests(); } }
+        if(act==='remove-test'){ testimonials.splice(idx,1); store.set('ep_testimonials',testimonials); renderTestimonials(); }
+      }
+    });
+
+    // populate demo testimonials & reels images (fallback: minimal)
+    // ensure all images referenced exist or onerror hide them (we used onerror above)
+
+    // helpful keyboard shortcut: press D to open donation name input
+    document.addEventListener('keydown',(e)=>{
+      if(e.key.toLowerCase()==='d'){ document.getElementById('donor-name').focus(); }
+      if(e.key.toLowerCase()==='q'){ document.getElementById('new-quote').focus(); }
+    });
+
+    // initial render calls are above; also ensure lists saved
+    store.set('ep_donations',donations);
+    store.set('ep_invests',investments);
+    store.set('ep_testimonials',testimonials);
+    store.set('ep_quotes',quotes);
+
+    // small accessibility note: all inputs are plain demo controls; integrate real backend for production.
+
+  </script>
 </body>
 </html>
