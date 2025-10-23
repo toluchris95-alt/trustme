@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edward Blake- Innovator & Philanthropist</title>
+    <title>Edward Blake - Innovator & Philanthropist</title>
     <style>
         /* Base: Ethereal styles with refined decor */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Cinzel:wght@400;700&family=Inter:wght@300;400&display=swap');
@@ -390,6 +390,22 @@
             margin-top: 50px;
         }
         
+        /* --- NEW: As Featured In --- */
+        .featured-in {
+            text-align: center;
+            opacity: 0.6;
+            font-family: var(--font-ui);
+            font-size: 0.9em;
+            margin: 60px auto 0 auto;
+            max-width: 800px;
+            color: var(--color-text-muted);
+        }
+        .featured-in span {
+            margin: 0 15px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
         /* --- ADMIN MODE (Hidden by default) --- */
         .controls {
             margin-top: 20px;
@@ -424,15 +440,11 @@
         }
     </style>
 </head>
-<body class="admin-hidden"> <!-- Hidden by default -->
-
-    <!-- Twinkling stars will be added here by JS -->
-
-    <nav>
+<body class="admin-hidden"> <nav>
         <div class="nav-container">
             <a href="#philosophy">Philosophy</a>
-            <a href="#journal">Global Journal</a>
-            <a href="#legacy">Legacy</a>
+            <a href="#principles">Principles</a> <a href="#journal">Global Journal</a>
+            <a href="#collection">Collection</a> <a href="#legacy">Legacy</a>
             <a href="#whispers">Whispers</a>
             <a href="#overture">Overture</a>
         </div>
@@ -454,7 +466,25 @@
                 </div>
             </div>
             <div class="philosophy-image" style="background-image: url('image/img1.jpeg');">
-                <!-- This is YOUR PIC -->
+                </div>
+        </section>
+
+        <section id="principles">
+            <h2>Core Principles</h2>
+            <p class="section-intro">My actions are guided by a simple, unwavering code. These are the pillars of my identity and my promise to those I partner with.</p>
+            <div class="legacy-grid">
+                <div class="legacy-card">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Absolute Discretion</h3>
+                    <p>Privacy is the ultimate luxury. All interactions are held in the strictest confidence. Your story is safe, your trust is paramount.</p>
+                </div>
+                <div class="legacy-card">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Tangible Impact</h3>
+                    <p>I believe in action, not just words. My goal is to create real, measurable change in a person's life or a venture's trajectory.</p>
+                </div>
+                <div class="legacy-card">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20v2H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v2H6.5A2.5 2.5 0 0 1 4 4.5v15z"></path></svg> Lasting Legacy</h3>
+                    <p>This is not about fleeting transactions. It is about building lasting relationships and legacies that grow and inspire for years to come.</p>
+                </div>
             </div>
         </section>
 
@@ -483,17 +513,30 @@
             </div>
         </section>
 
+        <section id="collection">
+            <h2>The Collection</h2>
+            <p class="section-intro">Beyond the journal, I have a passion for timeless design and human artistry. These are not possessions, but stories preserved in metal, canvas, and code.</p>
+            <div class="journal-wrapper">
+                <div class="journal-item" style="background-image: url('image/collection1.jpeg');"> <h3>Automotive Art</h3>
+                </div>
+                <div class="journal-item" style="background-image: url('image/collection2.jpeg');"> <h3>Modern Masters</h3>
+                </div>
+                <div class="journal-item" style="background-image: url('image/collection3.jpeg');"> <h3>Horological Design</h3>
+                </div>
+                <div class="journal-item" style="background-image: url('image/collection4.jpeg');"> <h3>Architectural Wonders</h3>
+                </div>
+            </div>
+        </section>
+
         <section id="legacy">
             <h2>Legacy & Ventures</h2>
             <p class="section-intro">True wealth is not what you spend, but what you build. My focus is on ventures that define the future and philanthropy that creates immediate, tangible change.</p>
             
             <h3 style="font-family: var(--font-heading); color: var(--color-gold); text-align: center; font-size: 1.8em;">My Ventures</h3>
             <div class="legacy-grid" id="ventures-list">
-                <!-- Ventures added by JS -->
-            </div>
+                </div>
             
-            <div class="controls" id="ventures-controls"> <!-- Hidden by default -->
-                <input type="text" id="venture-name" placeholder="Venture Name (e.g., Global Real Estate)">
+            <div class="controls" id="ventures-controls"> <input type="text" id="venture-name" placeholder="Venture Name (e.g., Global Real Estate)">
                 <input type="text" id="venture-desc" placeholder="Description (e.g., Curated portfolio in prime locations)">
                 <input type="text" id="venture-icon" placeholder="Icon (e.g., 'building', 'chart', 'plane')">
                 <button type="button" id="add-venture" class="admin-button">Add Venture</button>
@@ -501,11 +544,9 @@
 
             <h3 style="font-family: var(--font-heading); color: var(--color-gold); text-align: center; font-size: 1.8em; margin-top: 40px;">My Patronage</h3>
             <div class="legacy-grid" id="patronage-list">
-                <!-- Patronage items added by JS -->
-            </div>
+                </div>
             
-            <div class="controls" id="patronage-controls"> <!-- Hidden by default -->
-                <input type="text" id="patronage-name" placeholder="Organization Name (e.g., The Artist's Scholarship)">
+            <div class="controls" id="patronage-controls"> <input type="text" id="patronage-name" placeholder="Organization Name (e.g., The Artist's Scholarship)">
                 <input type="text" id="patronage-desc" placeholder="Description (e.g., Funding tuition for two art students...)">
                 <input type="text" id="patronage-icon" placeholder="Icon (e.g., 'book', 'heart', 'globe')">
                 <button type="button" id="add-patronage" class="admin-button">Add Patronage Item</button>
@@ -517,11 +558,9 @@
             <p class="section-intro">Trust is not given; it is earned. These are the words of those who have been part of my journey, from professional partners to kindred spirits.</p>
             
             <div class="reviews-grid" id="reviews-list">
-                <!-- Reviews added by JS -->
-            </div>
+                </div>
             
-            <div class="controls" id="reviews-controls"> <!-- Hidden by default -->
-                <select id="review-type">
+            <div class="controls" id="reviews-controls"> <select id="review-type">
                     <option value="trustpilot">Trustpilot Style (With Avatar)</option>
                     <option value="poetic">Poetic Style (Anonymous Muse)</option>
                 </select>
@@ -543,6 +582,13 @@
             </form>
         </section>
     </main>
+
+    <div class="featured-in">
+        As Discreetly Mentioned In:
+        <span>Forbes</span> &bull;
+        <span>The Robb Report</span> &bull;
+        <span>Financial Times</span>
+    </div>
 
     <footer>
         <p>© 2025 Edward Blake | All connections depicted are consensual and built on a foundation of mutual respect and discretion. Privacy is paramount.</p>
@@ -570,7 +616,10 @@
             'plane': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21h10v-3l-7.3-4.6c-.5-.3-.7-.9-.4-1.4L6 4.4V2.2c0-.7.5-1.2 1.2-1.2h.6c.7 0 1.2.5 1.2 1.2v2.2L16 11.1c.3.5.1 1.1-.4 1.4L8.3 17H3v4z"/></svg>',
             'book': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20v2H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v2H6.5A2.5 2.5 0 0 1 4 4.5v15z"></path></svg>',
             'heart': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>',
-            'globe': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>'
+            'globe': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>',
+            'shield': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', // NEW ICON
+            'home': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>', // NEW ICON
+            'cpu': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>' // NEW ICON
         };
 
         // --- Database (LocalStorage) ---
@@ -588,7 +637,10 @@
         let patronage = store.get('patronage', [
             { id: 1, name: "The Innovator's Fund", desc: "Seed capital and mentorship for young, ambitious entrepreneurs.", icon: "globe" },
             { id: 2, name: "The Artist's Scholarship", desc: "Funding tuition and materials for two exceptional art students annually.", icon: "book" },
-            { id: 3, name: "Doctors Without Borders", desc: "A public commitment to their critical, life-saving mission.", icon: "heart" }
+            // --- NEW ITEMS ADDED ---
+            { id: 3, name: "The Elder's Grace Fund", desc: "Providing comfort, care, and dignity to elderly populations in underserved communities.", icon: "heart" },
+            { id: 4, name: "Haven Children's Foundation", desc: "Supporting homes and educational programs for displaced children.", icon: "home" },
+            { id: 5, name: "Tech for Good Grant", desc: "Funding non-profits that leverage technology to solve critical human challenges.", icon: "cpu" }
         ]);
 
         let reviews = store.get('reviews', [
